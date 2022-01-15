@@ -27,11 +27,13 @@
                 rowNum=rowNum-1;
                 i=i-1;
             }
+            // complete gpa 
             $.ajax({
-				url: "results.json",//json文件位置，文件名
-				type: "GET",//请求方式为get
-				dataType: "json", //返回数据格式为json
-				success: function(data) {//请求成功完成后要执行的方法 
+				url: "results.json",
+				type: "GET",
+				dataType: "json",  
+				success: function(data) {
+                    var gpa=0;
                     for(var i=0;i<data.length;i++){
                         if(data[i].name==student1){
                             var row=table.insertRow(table.rows.length);
@@ -45,8 +47,10 @@
                             c4.innerHTML=data[i].results;
                             var c5=row.insertCell(4);
                             c5.innerHTML=data[i].GPA;
+                            gpa+=data[i].GPA;
                         }    
                     }
+                    document.getElementById("gpa").innerText=gpa;
 				}
 			})
         }
@@ -61,11 +65,13 @@
                 i=i-1;
             }
             $.ajax({
-				url: "results.json",//json文件位置，文件名
-				type: "GET",//请求方式为get
-				dataType: "json", //返回数据格式为json
-				success: function(data) {//请求成功完成后要执行的方法 
+				url: "results.json",
+				type: "GET",
+				dataType: "json",
+				success: function(data) { 
+                    var gpa=0;
                     for(var i=0;i<data.length;i++){
+                        
                         if(data[i].name==student1){
                             var row=table.insertRow(table.rows.length);
                             var c1=row.insertCell(0);
@@ -78,8 +84,10 @@
                             c4.innerHTML=data[i].results;
                             var c5=row.insertCell(4);
                             c5.innerHTML=data[i].GPA;
+                            gpa+=c5.innerHTML=data[i].GPA;
                         }    
                     }
+                    document.getElementById("gpa").innerText=gpa;
 				}
 			})
         }
@@ -129,14 +137,19 @@
             <tbody></tbody>
          </table>
     </div>
+    <div>
+        <h4 style="text-align: center;">Total Gpa : <span id="gpa"></span><h4>
+    </div>
 <script>
 $(function () {
     var table=document.getElementById("table");
     $.ajax({
-				url: "results.json",//json文件位置，文件名
-				type: "GET",//请求方式为get
-				dataType: "json", //返回数据格式为json
-				success: function(data) {//请求成功完成后要执行的方法 
+                
+				url: "results.json",
+				type: "GET",
+				dataType: "json", 
+				success: function(data) {
+                    var gpa=0;
                     for(var i=0;i<data.length;i++){
                             var row=table.insertRow(table.rows.length);
                             var c1=row.insertCell(0);
@@ -149,7 +162,9 @@ $(function () {
                             c4.innerHTML=data[i].results;
                             var c5=row.insertCell(4);
                             c5.innerHTML=data[i].GPA;
+                            gpa+=data[i].GPA;
                     }
+                    document.getElementById("gpa").innerText=gpa;
 				}
 			})
 });
