@@ -27,11 +27,12 @@
                 rowNum=rowNum-1;
                 i=i-1;
             }
+            // complete gpa 
             $.ajax({
-				url: "results.json",//json文件位置，文件名
-				type: "GET",//请求方式为get
-				dataType: "json", //返回数据格式为json
-				success: function(data) {//请求成功完成后要执行的方法 
+				url: "results.json",
+				type: "GET",
+				dataType: "json",  
+				success: function(data) {
                     var gpa=0;
                     for(var i=0;i<data.length;i++){
                         if(data[i].name==student1){
@@ -64,10 +65,10 @@
                 i=i-1;
             }
             $.ajax({
-				url: "results.json",//json文件位置，文件名
-				type: "GET",//请求方式为get
-				dataType: "json", //返回数据格式为json
-				success: function(data) {//请求成功完成后要执行的方法 
+				url: "results.json",
+				type: "GET",
+				dataType: "json",
+				success: function(data) { 
                     var gpa=0;
                     for(var i=0;i<data.length;i++){
                         
@@ -144,10 +145,10 @@ $(function () {
     var table=document.getElementById("table");
     $.ajax({
                 
-				url: "results.json",//json文件位置，文件名
-				type: "GET",//请求方式为get
-				dataType: "json", //返回数据格式为json
-				success: function(data) {//请求成功完成后要执行的方法 
+				url: "results.json",
+				type: "GET",
+				dataType: "json", 
+				success: function(data) {
                     var gpa=0;
                     for(var i=0;i<data.length;i++){
                             var row=table.insertRow(table.rows.length);
