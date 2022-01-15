@@ -109,7 +109,7 @@
                     var gpa=0;
                     for(var i=0;i<data.length;i++){
                         
-                        if(data[i].semester==seme1){
+                        if(data[i].semester==seme1 && data[i].semester !="2022-2023-2"){
                             var row=table.insertRow(table.rows.length);
                             var c1=row.insertCell(0);
                             c1.innerHTML=data[i].name;
@@ -146,7 +146,7 @@
                     var gpa=0;
                     for(var i=0;i<data.length;i++){
                         
-                        if(data[i].semester==seme2){
+                        if(data[i].semester==seme2  && data[i].semester !="2022-2023-2"){
                             var row=table.insertRow(table.rows.length);
                             var c1=row.insertCell(0);
                             c1.innerHTML=data[i].name;
