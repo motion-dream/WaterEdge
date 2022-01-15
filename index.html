@@ -91,6 +91,80 @@
 				}
 			})
         }
+        function select3(){
+            var seme1=$("#se1").html();
+            var table=document.getElementById("table");
+            var rowNum = table.rows.length;
+            for (i=1;i<rowNum;i++)
+            {
+                table.deleteRow(i);
+                rowNum=rowNum-1;
+                i=i-1;
+            }
+            $.ajax({
+				url: "results.json",
+				type: "GET",
+				dataType: "json",
+				success: function(data) { 
+                    var gpa=0;
+                    for(var i=0;i<data.length;i++){
+                        
+                        if(data[i].semester==seme1){
+                            var row=table.insertRow(table.rows.length);
+                            var c1=row.insertCell(0);
+                            c1.innerHTML=data[i].name;
+                            var c2=row.insertCell(1);
+                            c2.innerHTML=data[i].course;
+                            var c3=row.insertCell(2);
+                            c3.innerHTML=data[i].semester;
+                            var c4=row.insertCell(3);
+                            c4.innerHTML=data[i].results;
+                            var c5=row.insertCell(4);
+                            c5.innerHTML=data[i].GPA;
+                            gpa+=c5.innerHTML=data[i].GPA;
+                        }    
+                    }
+                    document.getElementById("gpa").innerText=gpa;
+				}
+			})
+        }
+        function select4(){
+            var seme2=$("#se2").html();
+            var table=document.getElementById("table");
+            var rowNum = table.rows.length;
+            for (i=1;i<rowNum;i++)
+            {
+                table.deleteRow(i);
+                rowNum=rowNum-1;
+                i=i-1;
+            }
+            $.ajax({
+				url: "results.json",
+				type: "GET",
+				dataType: "json",
+				success: function(data) { 
+                    var gpa=0;
+                    for(var i=0;i<data.length;i++){
+                        
+                        if(data[i].semester==seme2){
+                            var row=table.insertRow(table.rows.length);
+                            var c1=row.insertCell(0);
+                            c1.innerHTML=data[i].name;
+                            var c2=row.insertCell(1);
+                            c2.innerHTML=data[i].course;
+                            var c3=row.insertCell(2);
+                            c3.innerHTML=data[i].semester;
+                            var c4=row.insertCell(3);
+                            c4.innerHTML=data[i].results;
+                            var c5=row.insertCell(4);
+                            c5.innerHTML=data[i].GPA;
+                            gpa+=c5.innerHTML=data[i].GPA;
+                        }    
+                    }
+                    document.getElementById("gpa").innerText=gpa;
+				}
+			})
+        }
     </script>
 </head>
 <body>
@@ -108,20 +182,21 @@
                 <a id="s2" role="menuitem" tabindex="-1" onclick="select2()" href="#">Mingming Jia</a>
             </li>
         </ul>
-        <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+    </div>
+    <div>
+        <button type="button" class="btn dropdown-toggle" id="dropdownMenu2" 
         data-toggle="dropdown">
     Semester 
     <span class="caret"></span>
     </button>
-     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <ul class="dropdown-menu1" role="menu" aria-labelledby="dropdownMenu1">
     <li role="presentation">
-        <a id="s1" role="menuitem" tabindex="-1" onclick="select1()" href="#">Zhenxv Wang</a>
+        <a id="se1" role="menuitem" tabindex="-1" onclick="select3()" href="#">2020-2021-2</a>
     </li>
     <li role="presentation">
-        <a id="s2" role="menuitem" tabindex="-1" onclick="select2()" href="#">Mingming Jia</a>
+        <a id="se2" role="menuitem" tabindex="-1" onclick="select4()" href="#">2021-2022-1</a>
     </li>
-    </ul>
-    </div>
+    </ul></div>
     <div>
         <table class="table" id="table">
             <caption>Student SCORE</caption>
