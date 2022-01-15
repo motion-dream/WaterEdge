@@ -11,8 +11,8 @@
     "name" : "Mingming Jia",
     "course" : "BDO",
     "semester" : "2021-2022-1",
-    "GPA" : 4.5,
-    "results" : 95
+    "results" : 95,
+    "GPA" : 4.5
 
 }
 ,
@@ -20,8 +20,8 @@
     "name" : "Mingming Jia",
     "course" : "ADA",
     "semester" : "2020-2021-2",
-    "GPA" : 4.7,
-    "results" : 97
+    "results" : 97,
+    "GPA" : 4.7
 
 }
 ,
