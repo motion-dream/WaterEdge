@@ -16,3 +16,5 @@
 ---
 >### Project introduction:
 >+ The project is based on the Web to complete the students' grades, GPA query function, data through JSON file read. Users can view grades by term, and there is no limit to grade.
+>+ Users can choose which name and semester to view
+>+ The default for the current semester is 2022-2023-2
